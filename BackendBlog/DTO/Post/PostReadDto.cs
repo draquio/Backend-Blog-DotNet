@@ -1,6 +1,5 @@
 ﻿using BackendBlog.DTO.Category;
-using BackendBlog.DTO.Tag;
-using BackendBlog.Model;
+
 
 namespace BackendBlog.DTO.Post
 {
@@ -14,6 +13,5 @@ namespace BackendBlog.DTO.Post
         public string CreatedAt { get; set; }
         public string? Image { get; set; }
         public List<CategoryListDto>? Categories { get; set; }
-        public List<TagDetailsDto>? Tags { get; set; }
     }
 }

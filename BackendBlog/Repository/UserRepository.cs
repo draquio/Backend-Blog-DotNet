@@ -24,7 +24,7 @@ namespace BackendBlog.Repository
                     .ToListAsync();
                 return users;
             }
-            catch (Exception)
+            catch
             {
                 throw;
             }

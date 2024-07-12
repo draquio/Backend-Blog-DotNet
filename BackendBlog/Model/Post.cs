@@ -15,9 +15,9 @@ namespace BackendBlog.Model
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime UpdatedAt { get; set; }
         public bool Published { get; set; } = true;
+        public virtual List<string> Tags { get; set; } = new List<string>();
         public virtual User User { get; set; }
         public virtual ICollection<PostCategory> PostCategories { get; set; } = new List<PostCategory>();
-        public virtual ICollection<PostTag> PostTags { get; set; } = new List<PostTag>();
         public virtual ICollection<Comment> Comments { get; set; } = new List<Comment>();
 
     }
