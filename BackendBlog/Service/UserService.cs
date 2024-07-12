@@ -1,8 +1,11 @@
 ﻿using AutoMapper;
+using BackendBlog.DTO.Auth;
 using BackendBlog.DTO.User;
 using BackendBlog.Model;
 using BackendBlog.Repository.Interface;
 using BackendBlog.Service.Interface;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Win32;
 //using BackendBlog.Validators.Pagination;
 
 
@@ -13,11 +16,13 @@ namespace BackendBlog.Service
     {
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
+        private readonly IPasswordHasher<User> _passwordHasher;
 
-        public UserService(IUserRepository userRepository, IMapper mapper)
+        public UserService(IUserRepository userRepository, IMapper mapper, IPasswordHasher<User> passwordHasher)
         {
             _userRepository = userRepository;
             _mapper = mapper;
+            _passwordHasher = passwordHasher;
         }
 
         public async Task<List<UserListDto>> GetPagedUsers(int page, int pageSize)
@@ -35,7 +40,7 @@ namespace BackendBlog.Service
             }
             catch (Exception ex)
             {
-                throw new ApplicationException($"An error occurred while retrieving the Users: {ex.Message}", ex);
+                throw new ApplicationException($"An error occurred while retrieving the list of Users: {ex.Message}", ex);
             }
 
         }
@@ -55,7 +60,7 @@ namespace BackendBlog.Service
             }
             catch (Exception ex)
             {
-                throw new ApplicationException($"An error occurred while retrieving the User: {ex.Message}", ex);
+                throw new ApplicationException($"An error occurred while retrieving: {ex.Message}", ex);
             }
         }
         public async Task<UserReadDto> Create(UserCreateDto userCreateDto)
@@ -63,6 +68,7 @@ namespace BackendBlog.Service
             try
             {
                 User user = _mapper.Map<User>(userCreateDto);
+                user.Password = _passwordHasher.HashPassword(user, userCreateDto.Password);
                 User userCreated = await _userRepository.Create(user);
                 if(userCreated == null || userCreated.Id == 0) throw new InvalidOperationException("User couldn't be created");
                 User userWithRol = await _userRepository.GetById(userCreated.Id);
@@ -75,7 +81,7 @@ namespace BackendBlog.Service
             }
             catch (Exception ex)
             {
-                throw new ApplicationException($"An error occurred while creating the User: {ex.Message}", ex);
+                throw new ApplicationException($"An error occurred while creating: {ex.Message}", ex);
             }
         }
 
@@ -84,8 +90,9 @@ namespace BackendBlog.Service
             try
             {
                 User user = await _userRepository.GetById(userUpdateDto.Id);
-                if(user == null) throw new KeyNotFoundException($"User with ID {userUpdateDto.Id} not found");
+                if (user == null) throw new KeyNotFoundException($"User with ID {userUpdateDto.Id} not found");
                 _mapper.Map(userUpdateDto, user);
+                user.Password = user.Password;
                 bool response = await _userRepository.Update(user);
                 if(!response) throw new InvalidOperationException("User couldn't be updated");
                 return response;
@@ -99,7 +106,7 @@ namespace BackendBlog.Service
             }
             catch (Exception ex)
             {
-                throw new ApplicationException($"An error occurred while updateing the User: {ex.Message}", ex);
+                throw new ApplicationException($"An error occurred while updateing: {ex.Message}", ex);
             }
         }
         public async Task<bool> Delete(int id)
@@ -123,7 +130,36 @@ namespace BackendBlog.Service
             }
             catch (Exception ex)
             {
-                throw new ApplicationException($"An error occurred while deleting the Movie: {ex.Message}", ex);
+                throw new ApplicationException($"An error occurred while deleting: {ex.Message}", ex);
+            }
+        }
+
+        public async Task<bool> ChangePassword(UserChangePasswordDto changePassword)
+        {
+            try
+            {
+                User user = await _userRepository.GetById(changePassword.Id);
+                if (user == null) throw new KeyNotFoundException($"User with ID {changePassword.Id} not found");
+                if (user == null || _passwordHasher.VerifyHashedPassword(user, user.Password, changePassword.CurrentPassword) != PasswordVerificationResult.Success)
+                {
+                    throw new ApplicationException("Current password is incorrect");
+                }
+                user.Password = _passwordHasher.HashPassword(user, changePassword.NewPassword);
+                bool response = await _userRepository.Update(user);
+                if (!response) throw new InvalidOperationException("Password couldn't be updated");
+                return response;
+            }
+            catch (KeyNotFoundException)
+            {
+                throw;
+            }
+            catch (InvalidOperationException)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException($"An error occurred while updating password: {ex.Message}", ex);
             }
         }
     }

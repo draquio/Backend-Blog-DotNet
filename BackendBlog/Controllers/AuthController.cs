@@ -52,8 +52,8 @@ namespace BackendBlog.Controllers
             }
 
             rsp.status = true;
-            //User user = await _authService.Login(login);
-            User user = new User() { Username = "draquio", Email = "draquio@gmail.com", Password = "123", Id = 1 };
+            User user = await _authService.Login(login);
+            //User user = new User() { Username = "draquio", Email = "draquio@gmail.com", Password = "123", Id = 1 };
             rsp.value = await _tokenService.GenerateToken(user);
             return Ok(rsp);
         }

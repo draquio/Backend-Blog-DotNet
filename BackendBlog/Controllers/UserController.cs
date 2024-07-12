@@ -57,12 +57,12 @@ namespace BackendBlog.Controllers
             }
             if (!ModelState.IsValid)
             {
-                /*rsp.status = false;
+                rsp.status = false;
                 rsp.msg = "Invalid data";
                 rsp.errors = ModelState.Values
                     .SelectMany(err => err.Errors)
                     .Select(err => err.ErrorMessage)
-                    .ToList();*/
+                    .ToList();
                 return BadRequest(rsp);
             }
             rsp.status = true;
@@ -108,6 +108,32 @@ namespace BackendBlog.Controllers
             rsp.status = true;
             rsp.msg = "User deleted successfully";
             rsp.value = await _userService.Delete(id);
+            return Ok(rsp);
+        }
+        [HttpPatch("update-password")]
+        public async Task<ActionResult<Response<bool>>> ChangePassword([FromBody] UserChangePasswordDto changePassword)
+        {
+            var rsp = new Response<bool>();
+            if (changePassword.Id <= 0)
+            {
+                rsp.status = false;
+                rsp.msg = "Invalid ID";
+                return BadRequest(rsp);
+            }
+            if (!ModelState.IsValid)
+            {
+                rsp.status = false;
+                rsp.msg = "Invalid data";
+                rsp.errors = ModelState.Values
+                    .SelectMany(err => err.Errors)
+                    .Select(err => err.ErrorMessage)
+                    .ToList();
+                return BadRequest(rsp);
+            }
+            
+            rsp.status = true;
+            rsp.msg = "Password updated successfully";
+            rsp.value = await _userService.ChangePassword(changePassword);
             return Ok(rsp);
         }
     }

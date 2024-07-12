@@ -8,5 +8,6 @@ namespace BackendBlog.Service.Interface
     {
         Task<User> Login(LoginDto loginDto);
         Task<UserListDto> Register(RegisterDto registerDto);
+        
     }
 }

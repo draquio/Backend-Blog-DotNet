@@ -10,5 +10,6 @@ namespace BackendBlog.Service.Interface
         Task<UserReadDto> Create(UserCreateDto userCreateDto);
         Task<bool> Update(UserUpdateDto userUpdateDto);
         Task<bool> Delete(int id);
+        Task<bool> ChangePassword(UserChangePasswordDto changePassword);
     }
 }

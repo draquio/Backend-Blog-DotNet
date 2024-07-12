@@ -139,3 +139,4 @@ E:\Net\BackendBlog\BackendBlog\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.W
 E:\Net\BackendBlog\BackendBlog\bin\Debug\net8.0\AutoMapper.dll
 E:\Net\BackendBlog\BackendBlog\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 E:\Net\BackendBlog\BackendBlog\bin\Debug\net8.0\Newtonsoft.Json.dll
+E:\Net\BackendBlog\BackendBlog\obj\Debug\net8.0\BackendBlog.sourcelink.json
