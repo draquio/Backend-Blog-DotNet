@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Net\\BackendBlog\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|e:\\net\\backendblog\\backendblog\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|solutionrelative:backendblog\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|e:\\net\\backendblog\\backendblog\\ioc\\dependencies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|solutionrelative:backendblog\\ioc\\dependencies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "E:\\Net\\BackendBlog\\BackendBlog\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "BackendBlog\\Controllers\\UserController.cs",
+              "ToolTip": "E:\\Net\\BackendBlog\\BackendBlog\\Controllers\\UserController.cs",
+              "RelativeToolTip": "BackendBlog\\Controllers\\UserController.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAAwwDEAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T22:44:19.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Dependencies.cs",
+              "DocumentMoniker": "E:\\Net\\BackendBlog\\BackendBlog\\IOC\\Dependencies.cs",
+              "RelativeDocumentMoniker": "BackendBlog\\IOC\\Dependencies.cs",
+              "ToolTip": "E:\\Net\\BackendBlog\\BackendBlog\\IOC\\Dependencies.cs",
+              "RelativeToolTip": "BackendBlog\\IOC\\Dependencies.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAAABoAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T22:43:20.675Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
