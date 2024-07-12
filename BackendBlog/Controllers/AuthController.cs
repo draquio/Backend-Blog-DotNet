@@ -3,14 +3,7 @@ using BackendBlog.DTO.Auth;
 using BackendBlog.DTO.Token;
 using BackendBlog.Model;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Security.Cryptography;
-using System.Text;
-using BackendBlog.Repository.Interface;
 using BackendBlog.Service.Interface;
 using BackendBlog.DTO.User;
 
@@ -20,7 +13,6 @@ namespace BackendBlog.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        //private readonly IConfiguration _config;
         private readonly ITokenHistoryService _tokenService;
         private readonly IAuthService _authService;
 

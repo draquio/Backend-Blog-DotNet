@@ -11,11 +11,9 @@ namespace BackendBlog.Context
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Comment> Comments { get; set; }
         public virtual DbSet<Post> Posts { get; set; }
-        public virtual DbSet<Tag> Tags { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<PostCategory> PostCategories { get; set; }
-        public virtual DbSet<PostTag> PostTags { get; set; }
         public virtual DbSet<TokenHistory> TokenHistories { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -35,22 +33,6 @@ namespace BackendBlog.Context
                 .HasOne(postcategory => postcategory.Category)
                 .WithMany(category => category.PostCategories)
                 .HasForeignKey(postcategory => postcategory.CategoryId)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            // PostTag
-            modelBuilder.Entity<PostTag>()
-                .HasKey(posttag => new { posttag.PostId, posttag.TagId });
-            // One Post to Many PostTags
-            modelBuilder.Entity<PostTag>()
-                .HasOne(posttag => posttag.Post)
-                .WithMany(post => post.PostTags)
-                .HasForeignKey(posttag => posttag.PostId)
-                .OnDelete(DeleteBehavior.Restrict);
-            // One Tag to Many PostTags
-            modelBuilder.Entity<PostTag>()
-                .HasOne(posttag => posttag.Tag)
-                .WithMany(tag => tag.PostTags)
-                .HasForeignKey(posttag => posttag.TagId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             // Post - Comment

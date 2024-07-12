@@ -43,12 +43,13 @@ namespace BackendBlog.IOC
             services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ITokenHistoryRepository, TokenHistoryRepository>();
-
+            services.AddScoped<ICategoryRepository,  CategoryRepository>();
 
             // Service
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<ITokenHistoryService, TokenHistoryService>();
+            services.AddScoped<ICategoryService, CategoryService>();
 
             // AutoMapper
             services.AddAutoMapper(typeof(AutoMapperProfile));

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BackendBlog.DTO.Auth;
+using BackendBlog.DTO.Category;
 using BackendBlog.DTO.User;
 using BackendBlog.Model;
 
@@ -8,7 +9,8 @@ namespace BackendBlog.Mapper
     public class AutoMapperProfile : Profile
     {
         public AutoMapperProfile()
-        {
+        { 
+            // CreateMap<MapearDe, MapearA>
             #region User
             CreateMap<User, UserListDto>()
                 .ForMember(user => user.RoleName, options => options.MapFrom(dto => dto.Role.Name));
@@ -23,6 +25,16 @@ namespace BackendBlog.Mapper
             CreateMap<UserCreateDto, User>();
 
             CreateMap<UserUpdateDto, User>();
+
+            #endregion
+
+            #region Category
+            CreateMap<Category, CategoryReadDto>()
+                .ForMember(dto => dto.CreatedAt, options => options.MapFrom(category => category.CreatedAt.ToString("dd/MM/yyyy")))
+                .ReverseMap();
+            CreateMap<Category, CategoryListDto>().ReverseMap();
+            CreateMap<Category, CategoryUpdateDto>().ReverseMap();
+            CreateMap<Category, CategoryCreateDto>().ReverseMap();
 
             #endregion
         }
