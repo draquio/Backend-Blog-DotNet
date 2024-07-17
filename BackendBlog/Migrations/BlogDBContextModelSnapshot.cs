@@ -77,6 +77,30 @@ namespace BackendBlog.Migrations
                     b.ToTable("Comments");
                 });
 
+            modelBuilder.Entity("BackendBlog.Model.Image", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AltText")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Url")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Images");
+                });
+
             modelBuilder.Entity("BackendBlog.Model.Post", b =>
                 {
                     b.Property<int>("Id")
@@ -91,11 +115,15 @@ namespace BackendBlog.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Image")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("ImageId")
+                        .HasColumnType("int");
 
                     b.Property<bool>("Published")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Tags")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -108,6 +136,8 @@ namespace BackendBlog.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ImageId");
 
                     b.HasIndex("UserId");
 
@@ -133,24 +163,6 @@ namespace BackendBlog.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("PostCategories");
-                });
-
-            modelBuilder.Entity("BackendBlog.Model.PostTag", b =>
-                {
-                    b.Property<int>("PostId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TagId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.HasKey("PostId", "TagId");
-
-                    b.HasIndex("TagId");
-
-                    b.ToTable("PostTags");
                 });
 
             modelBuilder.Entity("BackendBlog.Model.Role", b =>
@@ -185,23 +197,6 @@ namespace BackendBlog.Migrations
                             Id = 3,
                             Name = "Usuario"
                         });
-                });
-
-            modelBuilder.Entity("BackendBlog.Model.Tag", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Tags");
                 });
 
             modelBuilder.Entity("BackendBlog.Model.TokenHistory", b =>
@@ -289,11 +284,19 @@ namespace BackendBlog.Migrations
 
             modelBuilder.Entity("BackendBlog.Model.Post", b =>
                 {
+                    b.HasOne("BackendBlog.Model.Image", "Image")
+                        .WithMany("Posts")
+                        .HasForeignKey("ImageId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("BackendBlog.Model.User", "User")
                         .WithMany("Posts")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.Navigation("Image");
 
                     b.Navigation("User");
                 });
@@ -315,25 +318,6 @@ namespace BackendBlog.Migrations
                     b.Navigation("Category");
 
                     b.Navigation("Post");
-                });
-
-            modelBuilder.Entity("BackendBlog.Model.PostTag", b =>
-                {
-                    b.HasOne("BackendBlog.Model.Post", "Post")
-                        .WithMany("PostTags")
-                        .HasForeignKey("PostId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("BackendBlog.Model.Tag", "Tag")
-                        .WithMany("PostTags")
-                        .HasForeignKey("TagId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Post");
-
-                    b.Navigation("Tag");
                 });
 
             modelBuilder.Entity("BackendBlog.Model.TokenHistory", b =>
@@ -363,23 +347,21 @@ namespace BackendBlog.Migrations
                     b.Navigation("PostCategories");
                 });
 
+            modelBuilder.Entity("BackendBlog.Model.Image", b =>
+                {
+                    b.Navigation("Posts");
+                });
+
             modelBuilder.Entity("BackendBlog.Model.Post", b =>
                 {
                     b.Navigation("Comments");
 
                     b.Navigation("PostCategories");
-
-                    b.Navigation("PostTags");
                 });
 
             modelBuilder.Entity("BackendBlog.Model.Role", b =>
                 {
                     b.Navigation("Users");
-                });
-
-            modelBuilder.Entity("BackendBlog.Model.Tag", b =>
-                {
-                    b.Navigation("PostTags");
                 });
 
             modelBuilder.Entity("BackendBlog.Model.User", b =>

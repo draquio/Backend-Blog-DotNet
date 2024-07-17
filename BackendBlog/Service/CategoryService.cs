@@ -4,6 +4,7 @@ using BackendBlog.DTO.User;
 using BackendBlog.Model;
 using BackendBlog.Repository.Interface;
 using BackendBlog.Service.Interface;
+using BackendBlog.Validators.Pagination;
 
 namespace BackendBlog.Service
 {
@@ -22,6 +23,8 @@ namespace BackendBlog.Service
         {
             try
             {
+                PaginationValidator.ValidatePage(page);
+                PaginationValidator.ValidatePageSize(pageSize);
                 List<Category> categories = await _categoryRepository.GetPagedCategories(page, pageSize);
                 if (categories == null) return new List<CategoryListDto>();
                 List<CategoryListDto> categoryListDto = _mapper.Map<List<CategoryListDto>>(categories);
@@ -36,6 +39,7 @@ namespace BackendBlog.Service
         {
             try
             {
+                IdValidator.ValidateId(id);
                 Category category = await _categoryRepository.GetById(id);
                 if(category == null) throw new KeyNotFoundException($"Category with ID {id} not found");
                 CategoryReadDto categoryReadDto = _mapper.Map<CategoryReadDto>(category);
@@ -47,7 +51,6 @@ namespace BackendBlog.Service
             }
             catch (Exception ex)
             {
-
                 throw new ApplicationException($"An error occurred while retrieving the category: {ex.Message}", ex);
             }
         }
@@ -95,12 +98,21 @@ namespace BackendBlog.Service
         {
             try
             {
+                IdValidator.ValidateId(id);
                 Category category = await _categoryRepository.GetById(id);
                 if(category == null) throw new KeyNotFoundException($"Category with ID {id} not found");
                 category.IsDelete = true;
                 bool response = await _categoryRepository.Update(category);
                 if(!response) throw new InvalidOperationException("Category couldn't be deleted");
                 return response;
+            }
+            catch (KeyNotFoundException)
+            {
+                throw;
+            }
+            catch (InvalidOperationException)
+            {
+                throw;
             }
             catch (Exception ex)
             {

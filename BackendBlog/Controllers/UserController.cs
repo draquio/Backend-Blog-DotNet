@@ -55,16 +55,6 @@ namespace BackendBlog.Controllers
                 rsp.msg = "User can't be null";
                 return BadRequest(rsp);
             }
-            if (!ModelState.IsValid)
-            {
-                rsp.status = false;
-                rsp.msg = "Invalid data";
-                rsp.errors = ModelState.Values
-                    .SelectMany(err => err.Errors)
-                    .Select(err => err.ErrorMessage)
-                    .ToList();
-                return BadRequest(rsp);
-            }
             rsp.status = true;
             rsp.value = await _userService.Create(user);
             return Ok(rsp);
@@ -79,16 +69,7 @@ namespace BackendBlog.Controllers
                 rsp.msg = "User can't be null or ID mismatch";
                 return BadRequest(rsp);
             }
-            if (!ModelState.IsValid)
-            {
-                rsp.status = false;
-                rsp.msg = "Invalid data";
-                rsp.errors = ModelState.Values
-                    .SelectMany(err => err.Errors)
-                    .Select(err => err.ErrorMessage)
-                    .ToList();
-                return BadRequest(rsp);
-            }
+
             rsp.status = true;
             rsp.msg = "User updated successfully";
             rsp.value = await _userService.Update(user);
@@ -120,16 +101,7 @@ namespace BackendBlog.Controllers
                 rsp.msg = "Invalid ID";
                 return BadRequest(rsp);
             }
-            if (!ModelState.IsValid)
-            {
-                rsp.status = false;
-                rsp.msg = "Invalid data";
-                rsp.errors = ModelState.Values
-                    .SelectMany(err => err.Errors)
-                    .Select(err => err.ErrorMessage)
-                    .ToList();
-                return BadRequest(rsp);
-            }
+
             
             rsp.status = true;
             rsp.msg = "Password updated successfully";

@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using System.Net;
 using System.Security.Authentication;
-
+using FluentValidation;
 namespace BackendBlog.Middleware
 {
     public class ExceptionHandlingMiddleware
@@ -42,8 +42,13 @@ namespace BackendBlog.Middleware
             var response = new Response<string>
             {
                 status = false,
-                //msg = exception.Message,
-                errors = new List<string> { exception.Message }
+                errors = exception switch
+                {
+                    ValidationException validationException => validationException.Errors
+                        .GroupBy(e => e.PropertyName)
+                        .ToDictionary(g => g.Key, g => g.Select(e => e.ErrorMessage).ToArray()),
+                    _ => new List<string> { exception.Message }
+                }
             };
 
             _logger.LogError(exception, "An error occurred: {Message}", exception.Message);

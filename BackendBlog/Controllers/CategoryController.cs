@@ -1,5 +1,6 @@
 ﻿using BackendBlog.DTO.Category;
 using BackendBlog.DTO.Response;
+using BackendBlog.Model;
 using BackendBlog.Service.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -50,14 +51,10 @@ namespace BackendBlog.Controllers
         public async Task<ActionResult<Response<CategoryReadDto>>> Create([FromBody] CategoryCreateDto category)
         {
             var rsp = new Response<CategoryReadDto>();
-            if (!ModelState.IsValid)
+            if (category == null)
             {
                 rsp.status = false;
-                rsp.msg = "Invalid data";
-                rsp.errors = ModelState.Values
-                    .SelectMany(err => err.Errors)
-                    .Select(err => err.ErrorMessage)
-                    .ToList();
+                rsp.msg = "Category can't be null";
                 return BadRequest(rsp);
             }
             rsp.status = true;

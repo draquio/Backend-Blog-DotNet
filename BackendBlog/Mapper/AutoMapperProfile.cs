@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BackendBlog.DTO.Auth;
 using BackendBlog.DTO.Category;
+using BackendBlog.DTO.Image;
 using BackendBlog.DTO.User;
 using BackendBlog.Model;
 
@@ -35,7 +36,11 @@ namespace BackendBlog.Mapper
             CreateMap<Category, CategoryListDto>().ReverseMap();
             CreateMap<Category, CategoryUpdateDto>().ReverseMap();
             CreateMap<Category, CategoryCreateDto>().ReverseMap();
+            #endregion
 
+            #region Image
+            CreateMap<Image, ImageDetailDto>()
+                .ForMember(dto => dto.CreatedAt, options => options.MapFrom(image => image.CreatedAt.ToString("dd/MM/yyyy HH:mm:ss")));
             #endregion
         }
     }

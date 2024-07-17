@@ -1,11 +1,58 @@
 {
   "Version": 1,
-  "Hash": "cc0ZMnPAmCcob0zWD+fth5Qk0n7ZZ0m0Tng5dDC6nUM=",
+  "Hash": "FN59kvXUxR7Zs4hevIZDPQTK41Vc7KzFJbfIEPKQKY0=",
   "Source": "BackendBlog",
   "BasePath": "_content/BackendBlog",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "BackendBlog\\wwwroot",
+      "Source": "BackendBlog",
+      "ContentRoot": "E:\\Net\\BackendBlog\\BackendBlog\\wwwroot\\",
+      "BasePath": "_content/BackendBlog",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "E:\\Net\\BackendBlog\\BackendBlog\\wwwroot\\Images\\89f3929b-7733-4b96-a190-877380fbd131_brave.jpg",
+      "SourceId": "BackendBlog",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Net\\BackendBlog\\BackendBlog\\wwwroot\\",
+      "BasePath": "_content/BackendBlog",
+      "RelativePath": "Images/89f3929b-7733-4b96-a190-877380fbd131_brave.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\89f3929b-7733-4b96-a190-877380fbd131_brave.jpg"
+    },
+    {
+      "Identity": "E:\\Net\\BackendBlog\\BackendBlog\\wwwroot\\Images\\d0dd80ed-a6e3-4736-a0aa-453c6a89db69_elemental.jpg",
+      "SourceId": "BackendBlog",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Net\\BackendBlog\\BackendBlog\\wwwroot\\",
+      "BasePath": "_content/BackendBlog",
+      "RelativePath": "Images/d0dd80ed-a6e3-4736-a0aa-453c6a89db69_elemental.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\d0dd80ed-a6e3-4736-a0aa-453c6a89db69_elemental.jpg"
+    }
+  ]
 }

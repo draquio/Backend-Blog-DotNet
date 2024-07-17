@@ -4,6 +4,7 @@ using BackendBlog.DTO.User;
 using BackendBlog.Model;
 using BackendBlog.Repository.Interface;
 using BackendBlog.Service.Interface;
+using BackendBlog.Validators.Pagination;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Win32;
 //using BackendBlog.Validators.Pagination;
@@ -29,8 +30,8 @@ namespace BackendBlog.Service
         {
             try
             {
-                //PaginationValidator.ValidatePage(page);
-                //PaginationValidator.ValidatePageSize(pageSize);
+                PaginationValidator.ValidatePage(page);
+                PaginationValidator.ValidatePageSize(pageSize);
 
                 List<User> users = await _userRepository.GetUsersWithRoles(page, pageSize);
 
@@ -48,7 +49,7 @@ namespace BackendBlog.Service
         {
             try
             {
-                //IdValidator.ValidateId(id);
+                IdValidator.ValidateId(id);
                 User user = await _userRepository.GetById(id);
                 if (user == null) throw new KeyNotFoundException($"User with ID {id} not found");
                 UserReadDto userReadDto = _mapper.Map<UserReadDto>(user);
@@ -113,7 +114,7 @@ namespace BackendBlog.Service
         {
             try
             {
-                //IdValidator.ValidateId(id);
+                IdValidator.ValidateId(id);
                 User user = await _userRepository.GetById(id);
                 if (user == null) throw new KeyNotFoundException($"User with ID {id} not found");
                 bool response = await _userRepository.Delete(user);

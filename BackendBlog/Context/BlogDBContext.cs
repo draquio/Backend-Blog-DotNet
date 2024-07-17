@@ -13,6 +13,7 @@ namespace BackendBlog.Context
         public virtual DbSet<Post> Posts { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Image> Images { get; set; }
         public virtual DbSet<PostCategory> PostCategories { get; set; }
         public virtual DbSet<TokenHistory> TokenHistories { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -48,6 +49,13 @@ namespace BackendBlog.Context
                 .HasOne(post => post.User)
                 .WithMany(user => user.Posts)
                 .HasForeignKey(post => post.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
+            // Post - Image
+            // Many post to one Image
+            modelBuilder.Entity<Post>()
+                .HasOne(post => post.Image)
+                .WithMany(image => image.Posts)
+                .HasForeignKey(post => post.ImageId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             // User - Role

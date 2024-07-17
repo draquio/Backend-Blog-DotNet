@@ -10,7 +10,14 @@ using BackendBlog.Service.Interface;
 using BackendBlog.Mapper;
 using BackendBlog.Model;
 using Microsoft.AspNetCore.Identity;
-using BackendBlog.Filter;
+using BackendBlog.Validators.Category;
+using BackendBlog.Validators.Comment;
+using BackendBlog.Validators.Role;
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using BackendBlog.Validators.Auth;
+using BackendBlog.Validators.Post;
+using BackendBlog.Validators.User;
 namespace BackendBlog.IOC
 {
     public static class Dependencies
@@ -36,29 +43,30 @@ namespace BackendBlog.IOC
                     };
                 });
 
-            //Password
+            // Password
             services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
 
-            //Repository
+            // Repository
             services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ITokenHistoryRepository, TokenHistoryRepository>();
             services.AddScoped<ICategoryRepository,  CategoryRepository>();
+            services.AddScoped<IImageRepository,  ImageRepository>();
 
             // Service
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<ITokenHistoryService, TokenHistoryService>();
             services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IImageService, ImageService>();
 
             // AutoMapper
             services.AddAutoMapper(typeof(AutoMapperProfile));
+            
+            // Validations
+            services.AddFluentValidationAutoValidation().AddFluentValidationClientsideAdapters();
+            services.AddValidatorsFromAssembly(typeof(Program).Assembly);
 
-            // Filter
-            services.AddControllers(options =>
-            {
-                options.Filters.Add<ValidationFilter>();
-            });
         }
     }
 }

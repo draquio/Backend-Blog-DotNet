@@ -1,12 +1,54 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "E:\\Net\\BackendBlog\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|e:\\net\\backendblog\\backendblog\\mapper\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|solutionrelative:backendblog\\mapper\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|e:\\net\\backendblog\\backendblog\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|solutionrelative:backendblog\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AutoMapperProfile.cs",
+              "DocumentMoniker": "E:\\Net\\BackendBlog\\BackendBlog\\Mapper\\AutoMapperProfile.cs",
+              "RelativeDocumentMoniker": "BackendBlog\\Mapper\\AutoMapperProfile.cs",
+              "ToolTip": "E:\\Net\\BackendBlog\\BackendBlog\\Mapper\\AutoMapperProfile.cs",
+              "RelativeToolTip": "BackendBlog\\Mapper\\AutoMapperProfile.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-17T01:00:56.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "E:\\Net\\BackendBlog\\BackendBlog\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "BackendBlog\\Controllers\\UserController.cs",
+              "ToolTip": "E:\\Net\\BackendBlog\\BackendBlog\\Controllers\\UserController.cs",
+              "RelativeToolTip": "BackendBlog\\Controllers\\UserController.cs",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAcwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-17T01:00:37.056Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
