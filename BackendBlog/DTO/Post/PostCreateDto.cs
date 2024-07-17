@@ -6,9 +6,9 @@ namespace BackendBlog.DTO.Post
     {
         public string Title { get; set; }
         public string? Content { get; set; }
-        public int AuthorId { get; set; }
-        public string? Image { get; set; }
+        public int UserId { get; set; }
+        public int? ImageId { get; set; }
         public List<int>? CategoryIds { get; set; }
-        public List<int>? TagsIds { get; set; }
+        public List<string>? Tags { get; set; }
     }
 }

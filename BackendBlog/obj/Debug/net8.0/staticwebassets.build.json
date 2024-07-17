@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FN59kvXUxR7Zs4hevIZDPQTK41Vc7KzFJbfIEPKQKY0=",
+  "Hash": "R1U14d72D0RP1bpYqeXe5dHPW4UtUGoNFhmDgr0FHvY=",
   "Source": "BackendBlog",
   "BasePath": "_content/BackendBlog",
   "Mode": "Default",
@@ -34,6 +34,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\89f3929b-7733-4b96-a190-877380fbd131_brave.jpg"
+    },
+    {
+      "Identity": "E:\\Net\\BackendBlog\\BackendBlog\\wwwroot\\Images\\95e12503-3dba-49f0-8339-7895c305d0b3_dbz.jpeg",
+      "SourceId": "BackendBlog",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Net\\BackendBlog\\BackendBlog\\wwwroot\\",
+      "BasePath": "_content/BackendBlog",
+      "RelativePath": "Images/95e12503-3dba-49f0-8339-7895c305d0b3_dbz.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\95e12503-3dba-49f0-8339-7895c305d0b3_dbz.jpeg"
     },
     {
       "Identity": "E:\\Net\\BackendBlog\\BackendBlog\\wwwroot\\Images\\d0dd80ed-a6e3-4736-a0aa-453c6a89db69_elemental.jpg",

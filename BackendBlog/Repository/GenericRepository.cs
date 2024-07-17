@@ -1,6 +1,7 @@
 ﻿using BackendBlog.Context;
 using BackendBlog.Repository.Interface;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace BackendBlog.Repository
 {
@@ -74,6 +75,22 @@ namespace BackendBlog.Repository
                 _dbContext.Set<T>().Remove(model);
                 await _dbContext.SaveChangesAsync();
                 return true;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+        public async Task<IQueryable<T>> GetByFilter(Expression<Func<T,bool>> filter = null)
+        {
+            try
+            {
+                IQueryable<T> query = _dbContext.Set<T>();
+                if(filter != null)
+                {
+                    query = query.Where(filter);
+                }
+                return await Task.FromResult(query);
             }
             catch
             {
