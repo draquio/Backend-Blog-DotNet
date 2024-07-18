@@ -144,3 +144,7 @@ E:\Net\BackendBlog\BackendBlog\obj\Debug\net8.0\BackendBlog.pdb
 E:\Net\BackendBlog\BackendBlog\obj\Debug\net8.0\BackendBlog.genruntimeconfig.cache
 E:\Net\BackendBlog\BackendBlog\obj\Debug\net8.0\ref\BackendBlog.dll
 E:\Net\BackendBlog\BackendBlog\bin\Debug\net8.0\BackendBlog.staticwebassets.runtime.json
+E:\Net\BackendBlog\BackendBlog\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+E:\Net\BackendBlog\BackendBlog\bin\Debug\net8.0\MailKit.dll
+E:\Net\BackendBlog\BackendBlog\bin\Debug\net8.0\MimeKit.dll
+E:\Net\BackendBlog\BackendBlog\bin\Debug\net8.0\System.Formats.Asn1.dll

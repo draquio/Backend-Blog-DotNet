@@ -45,6 +45,7 @@ namespace BackendBlog.Controllers
             rsp.value = await _userService.GetById(id);
             return Ok(rsp);
         }
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<Response<UserReadDto>>> Create([FromBody] UserCreateDto user)
         {
@@ -59,6 +60,7 @@ namespace BackendBlog.Controllers
             rsp.value = await _userService.Create(user);
             return Ok(rsp);
         }
+        [Authorize]
         [HttpPut("{id:int}")]
         public async Task<ActionResult<Response<bool>>> Update([FromBody] UserUpdateDto user, int id)
         {
@@ -75,7 +77,7 @@ namespace BackendBlog.Controllers
             rsp.value = await _userService.Update(user);
             return Ok(rsp);
         }
-
+        [Authorize]
         [HttpDelete("{id:int}")]
         public async Task<ActionResult<Response<bool>>> Delete(int id)
         {
@@ -91,6 +93,7 @@ namespace BackendBlog.Controllers
             rsp.value = await _userService.Delete(id);
             return Ok(rsp);
         }
+        [Authorize]
         [HttpPatch("update-password")]
         public async Task<ActionResult<Response<bool>>> ChangePassword([FromBody] UserChangePasswordDto changePassword)
         {

@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using BackendBlog.Service.Interface;
 using BackendBlog.DTO.User;
+using Newtonsoft.Json.Linq;
+using System.Net;
 
 namespace BackendBlog.Controllers
 {
@@ -45,7 +47,6 @@ namespace BackendBlog.Controllers
 
             rsp.status = true;
             User user = await _authService.Login(login);
-            //User user = new User() { Username = "draquio", Email = "draquio@gmail.com", Password = "123", Id = 1 };
             rsp.value = await _tokenService.GenerateToken(user);
             return Ok(rsp);
         }
@@ -84,6 +85,38 @@ namespace BackendBlog.Controllers
             rsp.msg = "Registered Successfully";
             return Ok(rsp);
         }
+
+        [HttpGet("verify")]
+        public async Task<ActionResult<Response<bool>>> VerifyAccount([FromQuery] string token)
+        {
+            var rsp = new Response<bool>();
+            string decodedToken = WebUtility.UrlDecode(token);
+            rsp.status = true;
+            rsp.msg = "Account verified successfully";
+            rsp.value = await _authService.VerifyAccount(decodedToken);
+            return Ok(rsp);
+        }
+
+        [HttpPost("request-password-reset")]
+        public async Task<ActionResult<Response<bool>>> RequestPasswordReset([FromBody] ResetPasswordRequestDto requestReset)
+        {
+            var rsp = new Response<bool>();
+            rsp.status = true;
+            rsp.msg = "Email to reset password was sent";
+            rsp.value = await _authService.RequestPasswordReset(requestReset);
+            return Ok(rsp);
+        }
+        [HttpPost("reset-password")]
+        public async Task<ActionResult<Response<bool>>> ResetPassword([FromQuery] string token)
+        {
+            var rsp = new Response<bool>();
+            string decodedToken = WebUtility.UrlDecode(token);
+            rsp.status = true;
+            rsp.msg = "Password reset successfully";
+            rsp.value = await _authService.ResetPassword(decodedToken);
+            return Ok(rsp);
+        }
+
 
         [Authorize]
         [HttpGet("prueba")]

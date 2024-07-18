@@ -2,6 +2,7 @@
 using BackendBlog.DTO.Response;
 using BackendBlog.Model;
 using BackendBlog.Service.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -37,6 +38,7 @@ namespace BackendBlog.Controllers
             rsp.value = await _postService.GetPostWithData(id);
             return Ok(rsp);
         }
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<Response<PostReadDto>>> Create([FromBody] PostCreateDto post)
         {
@@ -51,7 +53,7 @@ namespace BackendBlog.Controllers
             rsp.value = await _postService.Create(post);
             return Ok(rsp);
         }
-
+        [Authorize]
         [HttpPut("{id:int}")]
         public async Task<ActionResult<Response<bool>>> Update([FromBody] PostUpdateDto post, int id)
         {
@@ -67,6 +69,7 @@ namespace BackendBlog.Controllers
             rsp.value = await _postService.Update(post);
             return Ok(rsp);
         }
+        [Authorize]
         [HttpDelete("{id:int}")]
         public async Task<ActionResult<Response<bool>>> Delete(int id)
         {

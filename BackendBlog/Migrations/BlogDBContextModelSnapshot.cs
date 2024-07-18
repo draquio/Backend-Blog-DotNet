@@ -230,6 +230,38 @@ namespace BackendBlog.Migrations
                     b.ToTable("TokenHistories");
                 });
 
+            modelBuilder.Entity("BackendBlog.Model.TokenVerify", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("ExpirationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Token")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("TokenVerifies");
+                });
+
             modelBuilder.Entity("BackendBlog.Model.User", b =>
                 {
                     b.Property<int>("Id")
@@ -245,7 +277,7 @@ namespace BackendBlog.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
@@ -261,11 +293,17 @@ namespace BackendBlog.Migrations
 
                     b.Property<string>("Username")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Email")
+                        .IsUnique();
+
                     b.HasIndex("RoleId");
+
+                    b.HasIndex("Username")
+                        .IsUnique();
 
                     b.ToTable("Users");
                 });
@@ -329,6 +367,17 @@ namespace BackendBlog.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("BackendBlog.Model.TokenVerify", b =>
+                {
+                    b.HasOne("BackendBlog.Model.User", "User")
+                        .WithOne("TokenVerifyEmail")
+                        .HasForeignKey("BackendBlog.Model.TokenVerify", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("BackendBlog.Model.User", b =>
                 {
                     b.HasOne("BackendBlog.Model.Role", "Role")
@@ -367,6 +416,9 @@ namespace BackendBlog.Migrations
                     b.Navigation("Posts");
 
                     b.Navigation("TokenHistories");
+
+                    b.Navigation("TokenVerifyEmail")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

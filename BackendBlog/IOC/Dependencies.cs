@@ -53,6 +53,7 @@ namespace BackendBlog.IOC
             services.AddScoped<ICategoryRepository,  CategoryRepository>();
             services.AddScoped<IImageRepository,  ImageRepository>();
             services.AddScoped<IPostRepository,  PostRepository>();
+            services.AddScoped<ITokenVerifyRepository,  TokenVerifyRepository>();
 
             // Service
             services.AddScoped<IUserService, UserService>();
@@ -61,6 +62,7 @@ namespace BackendBlog.IOC
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IImageService, ImageService>();
             services.AddScoped<IPostService, PostService>();
+            services.AddScoped<IEmailService, EmailService>();
 
             // AutoMapper
             services.AddAutoMapper(typeof(AutoMapperProfile));

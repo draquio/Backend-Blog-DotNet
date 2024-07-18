@@ -16,6 +16,7 @@ namespace BackendBlog.Context
         public virtual DbSet<Image> Images { get; set; }
         public virtual DbSet<PostCategory> PostCategories { get; set; }
         public virtual DbSet<TokenHistory> TokenHistories { get; set; }
+        public virtual DbSet<TokenVerify> TokenVerifies { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -58,6 +59,13 @@ namespace BackendBlog.Context
                 .HasForeignKey(post => post.ImageId)
                 .OnDelete(DeleteBehavior.Restrict);
 
+            // User
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.HasIndex(user => user.Username).IsUnique();
+                entity.HasIndex(user => user.Email).IsUnique();
+            });
+
             // User - Role
             // Many Roles to One User
             modelBuilder.Entity<User>()
@@ -71,6 +79,12 @@ namespace BackendBlog.Context
             modelBuilder.Entity<User>()
                 .Property(user => user.IsActive)
                 .HasDefaultValue(true);
+
+            // User - TokenVerifyEmail
+            modelBuilder.Entity<User>()
+                .HasOne(user => user.TokenVerifyEmail)
+                .WithOne(token => token.User)
+                .HasForeignKey<TokenVerify>(token => token.UserId);
 
             // Roles
             modelBuilder.Entity<Role>().HasData(

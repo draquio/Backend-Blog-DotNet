@@ -15,6 +15,7 @@ namespace BackendBlog.Model
         public int RoleId { get; set; } 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public virtual Role? Role { get; set; }
+        public virtual TokenVerify TokenVerifyEmail { get; set; }
         public virtual ICollection<Post> Posts { get; set; } = new List<Post>();
         public virtual ICollection<TokenHistory> TokenHistories { get; set; } = new List<TokenHistory>();
     }
