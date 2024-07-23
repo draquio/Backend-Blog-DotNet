@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using BackendBlog.DTO.Category;
-using BackendBlog.DTO.User;
 using BackendBlog.Model;
 using BackendBlog.Repository.Interface;
 using BackendBlog.Service.Interface;

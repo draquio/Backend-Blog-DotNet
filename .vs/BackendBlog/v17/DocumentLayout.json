@@ -1,88 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "E:\\Net\\BackendBlog\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|e:\\net\\backendblog\\backendblog\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|solutionrelative:backendblog\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|e:\\net\\backendblog\\backendblog\\repository\\postrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|solutionrelative:backendblog\\repository\\postrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|e:\\net\\backendblog\\backendblog\\repository\\commentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|solutionrelative:backendblog\\repository\\commentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|e:\\net\\backendblog\\backendblog\\controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|solutionrelative:backendblog\\controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 3,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CommentRepository.cs",
-              "DocumentMoniker": "E:\\Net\\BackendBlog\\BackendBlog\\Repository\\CommentRepository.cs",
-              "RelativeDocumentMoniker": "BackendBlog\\Repository\\CommentRepository.cs",
-              "ToolTip": "E:\\Net\\BackendBlog\\BackendBlog\\Repository\\CommentRepository.cs",
-              "RelativeToolTip": "BackendBlog\\Repository\\CommentRepository.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAowCUAAABeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T15:06:33.09Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PostRepository.cs",
-              "DocumentMoniker": "E:\\Net\\BackendBlog\\BackendBlog\\Repository\\PostRepository.cs",
-              "RelativeDocumentMoniker": "BackendBlog\\Repository\\PostRepository.cs",
-              "ToolTip": "E:\\Net\\BackendBlog\\BackendBlog\\Repository\\PostRepository.cs",
-              "RelativeToolTip": "BackendBlog\\Repository\\PostRepository.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAgwBUAAABAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T15:05:00.661Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PostController.cs",
-              "DocumentMoniker": "E:\\Net\\BackendBlog\\BackendBlog\\Controllers\\PostController.cs",
-              "RelativeDocumentMoniker": "BackendBlog\\Controllers\\PostController.cs",
-              "ToolTip": "E:\\Net\\BackendBlog\\BackendBlog\\Controllers\\PostController.cs",
-              "RelativeToolTip": "BackendBlog\\Controllers\\PostController.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABoAAAA4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T14:58:39.835Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\Net\\BackendBlog\\BackendBlog\\Program.cs",
-              "RelativeDocumentMoniker": "BackendBlog\\Program.cs",
-              "ToolTip": "E:\\Net\\BackendBlog\\BackendBlog\\Program.cs",
-              "RelativeToolTip": "BackendBlog\\Program.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAUwCEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T14:50:11.248Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

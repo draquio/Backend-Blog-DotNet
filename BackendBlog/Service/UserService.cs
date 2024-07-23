@@ -1,14 +1,10 @@
 ﻿using AutoMapper;
-using BackendBlog.DTO.Auth;
 using BackendBlog.DTO.User;
 using BackendBlog.Model;
 using BackendBlog.Repository.Interface;
 using BackendBlog.Service.Interface;
 using BackendBlog.Validators.Pagination;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.Win32;
-//using BackendBlog.Validators.Pagination;
-
 
 namespace BackendBlog.Service
 {

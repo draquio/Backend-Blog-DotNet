@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using BackendBlog.DTO.Auth;
-using BackendBlog.DTO.Token;
 using BackendBlog.DTO.User;
 using BackendBlog.Model;
 using BackendBlog.Repository.Interface;

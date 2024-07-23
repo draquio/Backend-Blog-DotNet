@@ -113,6 +113,17 @@ namespace BackendBlog.IOC
                     }
                 });
             });
+
+            // CORS
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll", builder =>
+                {
+                    builder.AllowAnyMethod();
+                    builder.AllowAnyMethod();
+                    builder.AllowAnyHeader();
+                });
+            });
         }
     }
 }

@@ -2,11 +2,9 @@
 using BackendBlog.DTO.Auth;
 using BackendBlog.DTO.Token;
 using BackendBlog.Model;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using BackendBlog.Service.Interface;
 using BackendBlog.DTO.User;
-using System.Net;
 
 namespace BackendBlog.Controllers
 {
@@ -69,10 +67,10 @@ namespace BackendBlog.Controllers
         public async Task<ActionResult<Response<bool>>> VerifyAccount([FromQuery] string token)
         {
             var rsp = new Response<bool>();
-            string decodedToken = WebUtility.UrlDecode(token);
+            //string decodedToken = WebUtility.UrlDecode(token);
             rsp.status = true;
             rsp.msg = "Account verified successfully";
-            rsp.value = await _authService.VerifyAccount(decodedToken);
+            rsp.value = await _authService.VerifyAccount(token);
             return Ok(rsp);
         }
 
@@ -89,24 +87,13 @@ namespace BackendBlog.Controllers
         public async Task<ActionResult<Response<bool>>> ResetPassword([FromQuery] string token)
         {
             var rsp = new Response<bool>();
-            string decodedToken = WebUtility.UrlDecode(token);
+            // Si el token entra por la url como debe ser en POST, no hace falta hacer decode del Token
+            // string decodedToken = WebUtility.UrlDecode(token);
             rsp.status = true;
             rsp.msg = "Password reset successfully";
-            rsp.value = await _authService.ResetPassword(decodedToken);
+            rsp.value = await _authService.ResetPassword(token);
             return Ok(rsp);
         }
 
-        /*
-        [Authorize]
-        [HttpGet("prueba")]
-        public async Task<IActionResult> GetList()
-        {
-            List<string> lista = new List<string>()
-            {
-                "valor1", "valor2", "valor3",
-            };
-            return Ok(lista);
-        }
-        */
     }
 }

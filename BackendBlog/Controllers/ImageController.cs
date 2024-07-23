@@ -1,6 +1,5 @@
 ﻿using BackendBlog.DTO.Image;
 using BackendBlog.DTO.Response;
-using BackendBlog.Model;
 using BackendBlog.Service.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;

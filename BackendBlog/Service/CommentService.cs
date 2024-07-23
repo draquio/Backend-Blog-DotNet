@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using BackendBlog.DTO.Category;
 using BackendBlog.DTO.Comment;
 using BackendBlog.Model;
 using BackendBlog.Repository.Interface;
