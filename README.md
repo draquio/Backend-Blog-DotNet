@@ -15,25 +15,28 @@
 - Model First (creación, migración y versionamiento de la base de datos a partir del modelo).
 - Interfaces de Servicio y repositorio.
 - Cors activada para patición desde cualquier url.
+
 ![](https://i.ibb.co/dgk3VPV/image.png)
 
 # Auth para autenticación y autorización
-El sistema de Auth que cuenta de controlador, servicio y repositorio permite gestionar permisos y roles de acceso a lo endpoints contando con:
+El sistema de Auth cuenta de controlador, servicio y repositorio, y permite gestionar permisos y roles de acceso a lo endpoints contando con:
 - Login.- Genera AccessToken y RefreshToken.
 - RefreshToken.- Permite mantener la sesión vigente con el refresh token.
 - Register.- Registro de usuarios con validación de correo para activar la cuenta y poder acceder.
 - Verify.- Endpoint de verificación del correo electrónico.
 - Request Password Reset.- Realiza una petición con el correo para resetear contraseña, se envía un correo de verificación.
 - Reset Password.- Endpoint de verificación para el reseteo de password, genera una nueva contraseña aleatoria y la envía por correo.
+
 ![](https://i.ibb.co/vLNjhxf/image.png)
 
 # Post
-El sistema permite una gestión completa de blogpost solicitando permisos de Editar y/o Administrador.
+El sistema permite una gestión completa de blogpost solicitando permisos de Editor y/o Administrador.
 - Crear post.- Permite crear post con tags, categorías, miniatura, fecha de creación y actualización, estado y demás. (Administrador y Editor)
     - Título
     - Contenido
     - UserId (usuario que realizó la publicación)
     - ImageId (miniatura de la publicación, opcional)
+    - CategoryId (Id o lista de Ids de categorías, opcional)
     - Fecha de creación
     - Fecha de actualización (se actualiza cada que hacen un update del post)
     - Published (estado para ver si fue publicado o esta sin publicar)
@@ -48,6 +51,7 @@ El sistema permite una gestión completa de blogpost solicitando permisos de Edi
     - Filtro por fecha de creación (YYYY-MM-DD)
     - Filtro por tag
 - Buscar post por término.- Busca post por termino o palabras claves que se encuentren en el título o contenido del post.
+
 ![](https://i.ibb.co/f1JX31V/image.png)
 
 # Usuarios
@@ -58,6 +62,7 @@ Gestión de usuarios con Jwt y diferentes roles y permisos:
 - Editar usuario por Id (solo Administrador).
 - Eliminar usuario por Id (solo Administrador).
 - Modificar contraseña.- Permite actualizar la contraseña del usuario (requiere estar logeado).
+
 ![](https://i.ibb.co/87F5j3q/image.png)
 
 # Imagenes
@@ -67,6 +72,7 @@ Permite subir imágenes a la dirección wwwroot aceptando solo formatos de image
 - Obtener imagenes por id
 - Editar imágenes por Id (Administrador y Editor)
 - Eliminar imágenes por Id (Administrador y Editor)
+
 ![](https://i.ibb.co/Tm4QXgc/img.png)
 
 # Category
@@ -76,19 +82,22 @@ La sección de category permite gestionar las categorías las cuales pueden rela
 - Obtener categoría por Id
 - Editar categoría por Id (solo Administrador)
 - Borrado lógico de categoría por Id (solo Administrador) (IsDelete = true)
+
 ![](https://i.ibb.co/Bn2KKkf/image.png)
 
 # Comments
 La sección de comments permite a los visitantes del blog comentar publicaciones:
 - Crear comentarios.- Endpoint público.
-- Listar comentarios aprobados y públicos por PostId.
+- Listar comentarios aprobados por PostId.
 - Listar todos los comentarios con filtro para todos, aprobados y sin aprobar por PostId (requiere estar logeado).
 - Editar comentario por Id (Administrador y Editor)
 - Eliminar comentario por Id (Administrador y Editor)
 - Aprobar comentario por Id (Administrador y Editor) (IsApproved = true)
+
 ![](https://i.ibb.co/T4HJSLM/image.png)
 
-# DTO para la administración de datos de entrata y salida
+# DTO para la administración de entrata y salida de datos
+Para este sistema se cuenta con más de 24 DTOs.
 ![](https://i.ibb.co/vP0xywq/swagger-DTO-backend-blog.png)
 
 # Dependencias
@@ -102,3 +111,6 @@ La sección de comments permite a los visitantes del blog comentar publicaciones
 - Jwt Bearer
 - Tokens
 - Newtonsoft Json
+
+
+Desarrollado por Ing. Sergio Mercado.
