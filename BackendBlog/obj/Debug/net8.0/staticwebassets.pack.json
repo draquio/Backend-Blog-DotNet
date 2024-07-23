@@ -1,8 +1,16 @@
 {
   "Files": [
     {
+      "Id": "E:\\Net\\BackendBlog\\BackendBlog\\wwwroot\\Images\\2390ba2f-c29b-4281-9a46-cfaac4307210_b9c1dc61a3532d0995d87b03d632d5a5c51e6e2d.jpg",
+      "PackagePath": "staticwebassets\\Images\\2390ba2f-c29b-4281-9a46-cfaac4307210_b9c1dc61a3532d0995d87b03d632d5a5c51e6e2d.jpg"
+    },
+    {
       "Id": "E:\\Net\\BackendBlog\\BackendBlog\\wwwroot\\Images\\31d3d94f-f7ef-4f9a-ab72-8a2fc16456a1_fast x.jpg",
       "PackagePath": "staticwebassets\\Images\\31d3d94f-f7ef-4f9a-ab72-8a2fc16456a1_fast x.jpg"
+    },
+    {
+      "Id": "E:\\Net\\BackendBlog\\BackendBlog\\wwwroot\\Images\\89a9a3e0-1be2-4691-ba53-beb8c6857f6b_enredados.jpg",
+      "PackagePath": "staticwebassets\\Images\\89a9a3e0-1be2-4691-ba53-beb8c6857f6b_enredados.jpg"
     },
     {
       "Id": "E:\\Net\\BackendBlog\\BackendBlog\\wwwroot\\Images\\89f3929b-7733-4b96-a190-877380fbd131_brave.jpg",
@@ -15,6 +23,10 @@
     {
       "Id": "E:\\Net\\BackendBlog\\BackendBlog\\wwwroot\\Images\\d0dd80ed-a6e3-4736-a0aa-453c6a89db69_elemental.jpg",
       "PackagePath": "staticwebassets\\Images\\d0dd80ed-a6e3-4736-a0aa-453c6a89db69_elemental.jpg"
+    },
+    {
+      "Id": "E:\\Net\\BackendBlog\\BackendBlog\\wwwroot\\Images\\e9fa873e-af0a-4624-9f27-50fe7b3bd52d_coco.webp",
+      "PackagePath": "staticwebassets\\Images\\e9fa873e-af0a-4624-9f27-50fe7b3bd52d_coco.webp"
     },
     {
       "Id": "E:\\Net\\BackendBlog\\BackendBlog\\wwwroot\\Images\\ec28891f-d3c9-42a4-82bf-0c3aac4baa23_charlie y la.webp",

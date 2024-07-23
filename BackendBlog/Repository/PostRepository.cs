@@ -14,16 +14,20 @@ namespace BackendBlog.Repository
         {
             _dbContext = dbContext;
         }
-        public async Task<List<Post>> GetPagedPosts(int page, int pageSize)
+        public async Task<List<Post>> GetPagedPosts(int page, int pageSize, bool? IsPublished = null)
         {
             try
             {
-                List<Post>? posts = await _dbContext.Set<Post>()
+                IQueryable<Post> query = _dbContext.Set<Post>()
                     .Include(post => post.PostCategories).ThenInclude(postcategory => postcategory.Category)
                     .Include(post => post.User)
                     .Include(post => post.Image)
-                    .Include(post => post.Comments)
-                    .Skip((page - 1) * pageSize)
+                    .Include(post => post.Comments);
+                if (IsPublished.HasValue)
+                {
+                    query = query.Where(post => post.Published == IsPublished);
+                }
+                List<Post>? posts = await query.Skip((page - 1) * pageSize)
                     .Take(pageSize)
                     .ToListAsync();
                 return posts;

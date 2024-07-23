@@ -45,7 +45,7 @@ namespace BackendBlog.Controllers
             rsp.value = await _userService.GetById(id);
             return Ok(rsp);
         }
-        [Authorize]
+        [Authorize(Roles = "Administrador")]
         [HttpPost]
         public async Task<ActionResult<Response<UserReadDto>>> Create([FromBody] UserCreateDto user)
         {
@@ -61,7 +61,7 @@ namespace BackendBlog.Controllers
             rsp.value = await _userService.Create(user);
             return Ok(rsp);
         }
-        [Authorize]
+        [Authorize(Roles = "Administrador")]
         [HttpPut("{id:int}")]
         public async Task<ActionResult<Response<bool>>> Update([FromBody] UserUpdateDto user, int id)
         {
@@ -78,7 +78,7 @@ namespace BackendBlog.Controllers
             rsp.value = await _userService.Update(user);
             return Ok(rsp);
         }
-        [Authorize]
+        [Authorize(Roles = "Administrador")]
         [HttpDelete("{id:int}")]
         public async Task<ActionResult<Response<bool>>> Delete(int id)
         {

@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using BackendBlog.Service.Interface;
 using BackendBlog.DTO.User;
-using Newtonsoft.Json.Linq;
 using System.Net;
 
 namespace BackendBlog.Controllers
@@ -97,7 +96,7 @@ namespace BackendBlog.Controllers
             return Ok(rsp);
         }
 
-
+        /*
         [Authorize]
         [HttpGet("prueba")]
         public async Task<IActionResult> GetList()
@@ -108,6 +107,6 @@ namespace BackendBlog.Controllers
             };
             return Ok(lista);
         }
-
+        */
     }
 }

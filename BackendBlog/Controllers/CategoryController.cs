@@ -46,7 +46,7 @@ namespace BackendBlog.Controllers
             rsp.value = await _categoryService.GetById(id);
             return Ok(rsp);
         }
-        [Authorize]
+        [Authorize(Roles = "Administrador")]
         [HttpPost]
         public async Task<ActionResult<Response<CategoryReadDto>>> Create([FromBody] CategoryCreateDto category)
         {
@@ -62,7 +62,7 @@ namespace BackendBlog.Controllers
             rsp.value = await _categoryService.Create(category);
             return Ok(rsp);
         }
-        [Authorize]
+        [Authorize(Roles = "Administrador")]
         [HttpPut("{id:int}")]
         public async Task<ActionResult<Response<bool>>> Update([FromBody] CategoryUpdateDto category, int id)
         {
@@ -78,7 +78,7 @@ namespace BackendBlog.Controllers
             rsp.value = await _categoryService.Update(category);
             return Ok(rsp);
         }
-        [Authorize]
+        [Authorize(Roles = "Administrador")]
         [HttpDelete("{id:int}")]
         public async Task<ActionResult<Response<bool>>> SoftDelete(int id)
         {

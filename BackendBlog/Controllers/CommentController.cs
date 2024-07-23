@@ -67,7 +67,7 @@ namespace BackendBlog.Controllers
             rsp.pageSize = pageSize;
             return Ok(rsp);
         }
-        [Authorize]
+
         [HttpPost]
         public async Task<ActionResult<Response<CommentDetailDto>>> Create([FromBody] CommentCreateDto commentCreateDto)
         {
@@ -77,7 +77,7 @@ namespace BackendBlog.Controllers
             rsp.value = await _commentService.Create(commentCreateDto);
             return Ok(rsp);
         }
-        [Authorize]
+        [Authorize(Roles = "Administrador,Editor")]
         [HttpPut("{id:int}")]
         public async Task<ActionResult<Response<bool>>> Update([FromBody] CommentUpdateDto commentUpdateDto, int id)
         {
@@ -93,7 +93,7 @@ namespace BackendBlog.Controllers
             rsp.value = await _commentService.Update(commentUpdateDto);
             return Ok(rsp);
         }
-        [Authorize]
+        [Authorize(Roles = "Administrador,Editor")]
         [HttpDelete("{id:int}")]
         public async Task<ActionResult<Response<bool>>> Delete(int id)
         {
@@ -109,7 +109,7 @@ namespace BackendBlog.Controllers
             rsp.value = await _commentService.Delete(id);
             return Ok(rsp);
         }
-        [Authorize]
+        [Authorize(Roles = "Administrador,Editor")]
         [HttpPatch("approve/{id:int}")]
         public async Task<ActionResult<Response<bool>>> ApproveComment(int id)
         {

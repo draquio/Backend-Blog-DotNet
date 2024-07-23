@@ -19,12 +19,12 @@ namespace BackendBlog.Controllers
             _postService = postService;
         }
         [HttpGet]
-        public async Task<ActionResult<PagedResponse<List<PostListDto>>>> GetPosts(int page = 1, int pageSize = 10)
+        public async Task<ActionResult<PagedResponse<List<PostListDto>>>> GetPosts(int page = 1, int pageSize = 10, bool? IsPublished = null)
         {
             var rsp = new PagedResponse<List<PostListDto>>()
             {
                 status = true,
-                value = await _postService.GetPagedPosts(page, pageSize),
+                value = await _postService.GetPagedPosts(page, pageSize, IsPublished),
                 page = page,
                 pageSize = pageSize
             };
@@ -38,7 +38,7 @@ namespace BackendBlog.Controllers
             rsp.value = await _postService.GetPostWithData(id);
             return Ok(rsp);
         }
-        [Authorize]
+        [Authorize(Roles = "Administrador,Editor")]
         [HttpPost]
         public async Task<ActionResult<Response<PostReadDto>>> Create([FromBody] PostCreateDto post)
         {
@@ -54,7 +54,7 @@ namespace BackendBlog.Controllers
             rsp.value = await _postService.Create(post);
             return Ok(rsp);
         }
-        [Authorize]
+        [Authorize(Roles = "Administrador,Editor")]
         [HttpPut("{id:int}")]
         public async Task<ActionResult<Response<bool>>> Update([FromBody] PostUpdateDto post, int id)
         {
@@ -70,7 +70,7 @@ namespace BackendBlog.Controllers
             rsp.value = await _postService.Update(post);
             return Ok(rsp);
         }
-        [Authorize]
+        [Authorize(Roles = "Administrador,Editor")]
         [HttpDelete("{id:int}")]
         public async Task<ActionResult<Response<bool>>> Delete(int id)
         {

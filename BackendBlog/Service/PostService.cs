@@ -21,13 +21,13 @@ namespace BackendBlog.Service
             _mapper = mapper;
         }
 
-        public async Task<List<PostListDto>> GetPagedPosts(int page, int pageSize)
+        public async Task<List<PostListDto>> GetPagedPosts(int page, int pageSize, bool? IsPublished = null)
         {
             try
             {
                 PaginationValidator.ValidatePage(page);
                 PaginationValidator.ValidatePageSize(pageSize);
-                List<Post> posts = await _postRepository.GetPagedPosts(page, pageSize);
+                List<Post> posts = await _postRepository.GetPagedPosts(page, pageSize, IsPublished);
                 if(posts == null)  return new List<PostListDto>();
                 List<PostListDto> postListDtos = _mapper.Map<List<PostListDto>>(posts);
                 return postListDtos;

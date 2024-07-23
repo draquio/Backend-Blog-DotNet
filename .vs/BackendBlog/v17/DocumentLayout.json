@@ -3,32 +3,20 @@
   "WorkspaceRootPath": "E:\\Net\\BackendBlog\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|e:\\net\\backendblog\\backendblog\\controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|solutionrelative:backendblog\\controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|e:\\net\\backendblog\\backendblog\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|solutionrelative:backendblog\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|e:\\net\\backendblog\\backendblog\\controllers\\imagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|solutionrelative:backendblog\\controllers\\imagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|e:\\net\\backendblog\\backendblog\\repository\\postrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|solutionrelative:backendblog\\repository\\postrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|e:\\net\\backendblog\\backendblog\\mapper\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|solutionrelative:backendblog\\mapper\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|e:\\net\\backendblog\\backendblog\\repository\\commentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|solutionrelative:backendblog\\repository\\commentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|e:\\net\\backendblog\\backendblog\\service\\imageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|solutionrelative:backendblog\\service\\imageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|e:\\net\\backendblog\\backendblog\\dto\\image\\imagedetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|solutionrelative:backendblog\\dto\\image\\imagedetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|e:\\net\\backendblog\\backendblog\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|solutionrelative:backendblog\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|e:\\net\\backendblog\\backendblog\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|solutionrelative:backendblog\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|e:\\net\\backendblog\\backendblog\\controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D3C0858-D170-4EB7-9FA5-F2B8F3158C48}|BackendBlog\\BackendBlog.csproj|solutionrelative:backendblog\\controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,97 +26,59 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "AutoMapperProfile.cs",
-              "DocumentMoniker": "E:\\Net\\BackendBlog\\BackendBlog\\Mapper\\AutoMapperProfile.cs",
-              "RelativeDocumentMoniker": "BackendBlog\\Mapper\\AutoMapperProfile.cs",
-              "ToolTip": "E:\\Net\\BackendBlog\\BackendBlog\\Mapper\\AutoMapperProfile.cs",
-              "RelativeToolTip": "BackendBlog\\Mapper\\AutoMapperProfile.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAgwCkAAAAuAAAA",
+              "Title": "CommentRepository.cs",
+              "DocumentMoniker": "E:\\Net\\BackendBlog\\BackendBlog\\Repository\\CommentRepository.cs",
+              "RelativeDocumentMoniker": "BackendBlog\\Repository\\CommentRepository.cs",
+              "ToolTip": "E:\\Net\\BackendBlog\\BackendBlog\\Repository\\CommentRepository.cs",
+              "RelativeToolTip": "BackendBlog\\Repository\\CommentRepository.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAowCUAAABeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T13:59:13.248Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ImageService.cs",
-              "DocumentMoniker": "E:\\Net\\BackendBlog\\BackendBlog\\Service\\ImageService.cs",
-              "RelativeDocumentMoniker": "BackendBlog\\Service\\ImageService.cs",
-              "ToolTip": "E:\\Net\\BackendBlog\\BackendBlog\\Service\\ImageService.cs",
-              "RelativeToolTip": "BackendBlog\\Service\\ImageService.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAgwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T13:59:03.519Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ImageDetailDto.cs",
-              "DocumentMoniker": "E:\\Net\\BackendBlog\\BackendBlog\\DTO\\Image\\ImageDetailDto.cs",
-              "RelativeDocumentMoniker": "BackendBlog\\DTO\\Image\\ImageDetailDto.cs",
-              "ToolTip": "E:\\Net\\BackendBlog\\BackendBlog\\DTO\\Image\\ImageDetailDto.cs",
-              "RelativeToolTip": "BackendBlog\\DTO\\Image\\ImageDetailDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T13:58:53.841Z",
+              "WhenOpened": "2024-07-23T15:06:33.09Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ImageController.cs",
-              "DocumentMoniker": "E:\\Net\\BackendBlog\\BackendBlog\\Controllers\\ImageController.cs",
-              "RelativeDocumentMoniker": "BackendBlog\\Controllers\\ImageController.cs",
-              "ToolTip": "E:\\Net\\BackendBlog\\BackendBlog\\Controllers\\ImageController.cs",
-              "RelativeToolTip": "BackendBlog\\Controllers\\ImageController.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAowCgAAAAJAAAA",
+              "Title": "PostRepository.cs",
+              "DocumentMoniker": "E:\\Net\\BackendBlog\\BackendBlog\\Repository\\PostRepository.cs",
+              "RelativeDocumentMoniker": "BackendBlog\\Repository\\PostRepository.cs",
+              "ToolTip": "E:\\Net\\BackendBlog\\BackendBlog\\Repository\\PostRepository.cs",
+              "RelativeToolTip": "BackendBlog\\Repository\\PostRepository.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAgwBUAAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T13:58:23.87Z",
+              "WhenOpened": "2024-07-23T15:05:00.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PostController.cs",
+              "DocumentMoniker": "E:\\Net\\BackendBlog\\BackendBlog\\Controllers\\PostController.cs",
+              "RelativeDocumentMoniker": "BackendBlog\\Controllers\\PostController.cs",
+              "ToolTip": "E:\\Net\\BackendBlog\\BackendBlog\\Controllers\\PostController.cs",
+              "RelativeToolTip": "BackendBlog\\Controllers\\PostController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABoAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T14:58:39.835Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CommentController.cs",
-              "DocumentMoniker": "E:\\Net\\BackendBlog\\BackendBlog\\Controllers\\CommentController.cs",
-              "RelativeDocumentMoniker": "BackendBlog\\Controllers\\CommentController.cs",
-              "ToolTip": "E:\\Net\\BackendBlog\\BackendBlog\\Controllers\\CommentController.cs",
-              "RelativeToolTip": "BackendBlog\\Controllers\\CommentController.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAADwvwkAAAABAAAA",
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Net\\BackendBlog\\BackendBlog\\Program.cs",
+              "RelativeDocumentMoniker": "BackendBlog\\Program.cs",
+              "ToolTip": "E:\\Net\\BackendBlog\\BackendBlog\\Program.cs",
+              "RelativeToolTip": "BackendBlog\\Program.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAUwCEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-19T20:47:15.598Z",
+              "WhenOpened": "2024-07-23T14:50:11.248Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "E:\\Net\\BackendBlog\\BackendBlog\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "BackendBlog\\Controllers\\AuthController.cs",
-              "ToolTip": "E:\\Net\\BackendBlog\\BackendBlog\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "BackendBlog\\Controllers\\AuthController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-19T20:47:10.967Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "E:\\Net\\BackendBlog\\BackendBlog\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "BackendBlog\\Controllers\\UserController.cs",
-              "ToolTip": "E:\\Net\\BackendBlog\\BackendBlog\\Controllers\\UserController.cs",
-              "RelativeToolTip": "BackendBlog\\Controllers\\UserController.cs",
-              "ViewState": "AQIAAEEAAAAAAAAAAAA0wF4AAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-19T20:46:55.239Z"
             }
           ]
         }

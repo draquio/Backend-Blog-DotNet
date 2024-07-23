@@ -6,7 +6,7 @@ namespace BackendBlog.Service.Interface
 {
     public interface IPostService
     {
-        Task<List<PostListDto>> GetPagedPosts(int page, int pageSize);
+        Task<List<PostListDto>> GetPagedPosts(int page, int pageSize, bool? IsPublished = null);
         Task<PostReadDto> GetPostWithData(int id);
         Task<PostReadDto> Create(PostCreateDto postCreateDto);
         Task<bool> Update(PostUpdateDto postUpdateDto);

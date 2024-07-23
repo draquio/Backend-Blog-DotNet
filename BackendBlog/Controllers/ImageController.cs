@@ -19,7 +19,7 @@ namespace BackendBlog.Controllers
         {
             _imageService = imageService;
         }
-        [Authorize]
+        [Authorize(Roles = "Administrador,Editor")]
         [HttpPost]
         [Consumes("multipart/form-data")]
         public async Task<ActionResult<ImageDetailDto>> UploadImage([FromForm] ImageUploadDto imageUploadDto)
@@ -62,7 +62,7 @@ namespace BackendBlog.Controllers
             rsp.value = await _imageService.GetById(id);
             return Ok(rsp);
         }
-        [Authorize]
+        [Authorize(Roles = "Administrador,Editor")]
         [HttpPut("{id:int}")]
         public async Task<ActionResult<Response<bool>>> Update([FromBody] ImageUpdateDto imageUpdateDto, int id)
         {
@@ -79,7 +79,7 @@ namespace BackendBlog.Controllers
             rsp.value = await _imageService.Update(imageUpdateDto);
             return Ok(rsp);
         }
-        [Authorize]
+        [Authorize(Roles = "Administrador,Editor")]
         [HttpDelete("{id:int}")]
         public async Task<ActionResult<Response<bool>>> Delete(int id)
         {

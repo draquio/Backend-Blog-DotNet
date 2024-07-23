@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Identity;
 
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Microsoft.OpenApi.Models;
 namespace BackendBlog.IOC
 {
     public static class Dependencies
@@ -41,6 +42,14 @@ namespace BackendBlog.IOC
             // Password
             services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
 
+            // Roles
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("RequireAdminRole", policy => policy.RequireRole("Administrador"));
+                options.AddPolicy("RequireEditorRole", policy => policy.RequireRole("Editor"));
+                options.AddPolicy("RequireUserRole", policy => policy.RequireRole("Usuario"));
+            });
+
             // Repository
             services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<IUserRepository, UserRepository>();
@@ -68,6 +77,42 @@ namespace BackendBlog.IOC
             services.AddFluentValidationAutoValidation().AddFluentValidationClientsideAdapters();
             services.AddValidatorsFromAssembly(typeof(Program).Assembly);
 
+            // Swagger + JWT Bearer
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new OpenApiInfo { Title = "Backend Blog", Version = "v1" });
+
+                // Add JWT authentication scheme
+                options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
+                    Name = "Authorization",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.Http,
+                    Scheme = "bearer",
+                    BearerFormat = "JWT",
+                    Reference = new OpenApiReference
+                    {
+                        Type = ReferenceType.SecurityScheme,
+                        Id = "Bearer"
+                    }
+                });
+
+                options.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        new string[] {}
+                    }
+                });
+            });
         }
     }
 }
