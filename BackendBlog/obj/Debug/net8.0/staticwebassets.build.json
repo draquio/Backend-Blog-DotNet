@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "R1U14d72D0RP1bpYqeXe5dHPW4UtUGoNFhmDgr0FHvY=",
+  "Hash": "qf6WMSXJm++PAliR9QXAUJ+8ea7Kd8opMK5XXWaLOsU=",
   "Source": "BackendBlog",
   "BasePath": "_content/BackendBlog",
   "Mode": "Default",
@@ -16,6 +16,25 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "E:\\Net\\BackendBlog\\BackendBlog\\wwwroot\\Images\\31d3d94f-f7ef-4f9a-ab72-8a2fc16456a1_fast x.jpg",
+      "SourceId": "BackendBlog",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Net\\BackendBlog\\BackendBlog\\wwwroot\\",
+      "BasePath": "_content/BackendBlog",
+      "RelativePath": "Images/31d3d94f-f7ef-4f9a-ab72-8a2fc16456a1_fast x.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\31d3d94f-f7ef-4f9a-ab72-8a2fc16456a1_fast x.jpg"
+    },
     {
       "Identity": "E:\\Net\\BackendBlog\\BackendBlog\\wwwroot\\Images\\89f3929b-7733-4b96-a190-877380fbd131_brave.jpg",
       "SourceId": "BackendBlog",
@@ -72,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\d0dd80ed-a6e3-4736-a0aa-453c6a89db69_elemental.jpg"
+    },
+    {
+      "Identity": "E:\\Net\\BackendBlog\\BackendBlog\\wwwroot\\Images\\ec28891f-d3c9-42a4-82bf-0c3aac4baa23_charlie y la.webp",
+      "SourceId": "BackendBlog",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Net\\BackendBlog\\BackendBlog\\wwwroot\\",
+      "BasePath": "_content/BackendBlog",
+      "RelativePath": "Images/ec28891f-d3c9-42a4-82bf-0c3aac4baa23_charlie y la.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\ec28891f-d3c9-42a4-82bf-0c3aac4baa23_charlie y la.webp"
     }
   ]
 }

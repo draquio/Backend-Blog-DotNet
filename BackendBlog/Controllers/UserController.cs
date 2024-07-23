@@ -57,6 +57,7 @@ namespace BackendBlog.Controllers
                 return BadRequest(rsp);
             }
             rsp.status = true;
+            rsp.msg = "User created successfully";
             rsp.value = await _userService.Create(user);
             return Ok(rsp);
         }
@@ -98,14 +99,6 @@ namespace BackendBlog.Controllers
         public async Task<ActionResult<Response<bool>>> ChangePassword([FromBody] UserChangePasswordDto changePassword)
         {
             var rsp = new Response<bool>();
-            if (changePassword.Id <= 0)
-            {
-                rsp.status = false;
-                rsp.msg = "Invalid ID";
-                return BadRequest(rsp);
-            }
-
-            
             rsp.status = true;
             rsp.msg = "Password updated successfully";
             rsp.value = await _userService.ChangePassword(changePassword);

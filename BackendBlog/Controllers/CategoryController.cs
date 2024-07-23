@@ -58,6 +58,7 @@ namespace BackendBlog.Controllers
                 return BadRequest(rsp);
             }
             rsp.status = true;
+            rsp.msg = "Category created successfully";
             rsp.value = await _categoryService.Create(category);
             return Ok(rsp);
         }
@@ -70,16 +71,6 @@ namespace BackendBlog.Controllers
             {
                 rsp.status = false;
                 rsp.msg = "Category can't be null or ID mismatch";
-                return BadRequest(rsp);
-            }
-            if (!ModelState.IsValid)
-            {
-                rsp.status = false;
-                rsp.msg = "Invalid data";
-                rsp.errors = ModelState.Values
-                    .SelectMany(err => err.Errors)
-                    .Select(err => err.ErrorMessage)
-                    .ToList();
                 return BadRequest(rsp);
             }
             rsp.status = true;

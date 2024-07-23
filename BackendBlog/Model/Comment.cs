@@ -11,6 +11,7 @@ namespace BackendBlog.Model
         public string AuthorComment { get; set; }
         public int PostId { get; set; }
         public string Content { get; set; }
+        public bool IsApproved { get; set; } = false;
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public virtual Post? Post { get; set; }
     }

@@ -32,6 +32,7 @@ namespace BackendBlog.Controllers
                 return BadRequest(rsp);
             }
             rsp.status = true;
+            rsp.msg = "Image uploaded successfully";
             rsp.value = await _imageService.Create(imageUploadDto);
             return Ok(rsp);
         }

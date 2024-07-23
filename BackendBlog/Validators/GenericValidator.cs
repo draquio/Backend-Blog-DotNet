@@ -17,5 +17,9 @@ namespace BackendBlog.Validators
                 throw new ArgumentException("The provided email is not valid.");
             }
         }
+        public static void ValidateId(int id)
+        {
+            if (id < 1) throw new ArgumentException("Id must be greater than or equal to 1.");
+        }
     }
 }

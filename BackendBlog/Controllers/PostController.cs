@@ -50,6 +50,7 @@ namespace BackendBlog.Controllers
                 return BadRequest(rsp);
             }
             rsp.status = true;
+            rsp.msg = "Post created successfully";
             rsp.value = await _postService.Create(post);
             return Ok(rsp);
         }

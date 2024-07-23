@@ -34,16 +34,6 @@ namespace BackendBlog.Controllers
                 rsp.msg = "Login data can't be null";
                 return BadRequest(rsp);
             }
-            if (!ModelState.IsValid)
-            {
-                rsp.status = false;
-                rsp.msg = "Invalid data";
-                rsp.errors = ModelState.Values
-                    .SelectMany(err => err.Errors)
-                    .Select(err => err.ErrorMessage)
-                    .ToList();
-                return BadRequest(rsp);
-            }
 
             rsp.status = true;
             User user = await _authService.Login(login);
@@ -67,16 +57,6 @@ namespace BackendBlog.Controllers
             {
                 rsp.status = false;
                 rsp.msg = "Register data can't be null";
-                return BadRequest(rsp);
-            }
-            if (!ModelState.IsValid)
-            {
-                rsp.status = false;
-                rsp.msg = "Invalid data";
-                rsp.errors = ModelState.Values
-                    .SelectMany(err => err.Errors)
-                    .Select(err => err.ErrorMessage)
-                    .ToList();
                 return BadRequest(rsp);
             }
 

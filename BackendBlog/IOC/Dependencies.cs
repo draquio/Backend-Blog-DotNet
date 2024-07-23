@@ -10,14 +10,9 @@ using BackendBlog.Service.Interface;
 using BackendBlog.Mapper;
 using BackendBlog.Model;
 using Microsoft.AspNetCore.Identity;
-using BackendBlog.Validators.Category;
-using BackendBlog.Validators.Comment;
-using BackendBlog.Validators.Role;
+
 using FluentValidation;
 using FluentValidation.AspNetCore;
-using BackendBlog.Validators.Auth;
-using BackendBlog.Validators.Post;
-using BackendBlog.Validators.User;
 namespace BackendBlog.IOC
 {
     public static class Dependencies
@@ -54,6 +49,7 @@ namespace BackendBlog.IOC
             services.AddScoped<IImageRepository,  ImageRepository>();
             services.AddScoped<IPostRepository,  PostRepository>();
             services.AddScoped<ITokenVerifyRepository,  TokenVerifyRepository>();
+            services.AddScoped<ICommentRepository,  CommentRepository>();
 
             // Service
             services.AddScoped<IUserService, UserService>();
@@ -63,6 +59,7 @@ namespace BackendBlog.IOC
             services.AddScoped<IImageService, ImageService>();
             services.AddScoped<IPostService, PostService>();
             services.AddScoped<IEmailService, EmailService>();
+            services.AddScoped<ICommentService, CommentService>();
 
             // AutoMapper
             services.AddAutoMapper(typeof(AutoMapperProfile));

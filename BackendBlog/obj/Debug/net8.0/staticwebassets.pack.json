@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "E:\\Net\\BackendBlog\\BackendBlog\\wwwroot\\Images\\31d3d94f-f7ef-4f9a-ab72-8a2fc16456a1_fast x.jpg",
+      "PackagePath": "staticwebassets\\Images\\31d3d94f-f7ef-4f9a-ab72-8a2fc16456a1_fast x.jpg"
+    },
+    {
       "Id": "E:\\Net\\BackendBlog\\BackendBlog\\wwwroot\\Images\\89f3929b-7733-4b96-a190-877380fbd131_brave.jpg",
       "PackagePath": "staticwebassets\\Images\\89f3929b-7733-4b96-a190-877380fbd131_brave.jpg"
     },
@@ -11,6 +15,10 @@
     {
       "Id": "E:\\Net\\BackendBlog\\BackendBlog\\wwwroot\\Images\\d0dd80ed-a6e3-4736-a0aa-453c6a89db69_elemental.jpg",
       "PackagePath": "staticwebassets\\Images\\d0dd80ed-a6e3-4736-a0aa-453c6a89db69_elemental.jpg"
+    },
+    {
+      "Id": "E:\\Net\\BackendBlog\\BackendBlog\\wwwroot\\Images\\ec28891f-d3c9-42a4-82bf-0c3aac4baa23_charlie y la.webp",
+      "PackagePath": "staticwebassets\\Images\\ec28891f-d3c9-42a4-82bf-0c3aac4baa23_charlie y la.webp"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.BackendBlog.Microsoft.AspNetCore.StaticWebAssets.props",
