@@ -99,7 +99,7 @@ namespace BackendBlog.Service
             }
             catch (Exception ex)
             {
-                throw new ApplicationException($"An error occurred while updateing: {ex.Message}", ex);
+                throw new ApplicationException($"An error occurred while updating: {ex.Message}", ex);
             }
         }
         public async Task<bool> Delete(int id)

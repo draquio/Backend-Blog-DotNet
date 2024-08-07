@@ -3,11 +3,6 @@ using BackendBlog.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
-/*builder.Configuration
-    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
-    .AddEnvironmentVariables();*/
-
 builder.Services.InjectDependencies(builder.Configuration);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

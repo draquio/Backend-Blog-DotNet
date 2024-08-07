@@ -5,6 +5,7 @@ using BackendBlog.Repository.Interface;
 using BackendBlog.Service.Interface;
 using BackendBlog.Validators.Pagination;
 using Microsoft.AspNetCore.Identity;
+using System;
 
 namespace BackendBlog.Service
 {
@@ -103,7 +104,7 @@ namespace BackendBlog.Service
             }
             catch (Exception ex)
             {
-                throw new ApplicationException($"An error occurred while updateing: {ex.Message}", ex);
+                throw new ApplicationException($"An error occurred while updating: {ex.Message}", ex);
             }
         }
         public async Task<bool> Delete(int id)
@@ -139,7 +140,7 @@ namespace BackendBlog.Service
                 if (user == null) throw new KeyNotFoundException($"User with ID {changePassword.Id} not found");
                 if (user == null || _passwordHasher.VerifyHashedPassword(user, user.Password, changePassword.CurrentPassword) != PasswordVerificationResult.Success)
                 {
-                    throw new ApplicationException("Current password is incorrect");
+                    throw new UnauthorizedAccessException("Current password is incorrect");
                 }
                 user.Password = _passwordHasher.HashPassword(user, changePassword.NewPassword);
                 bool response = await _userRepository.Update(user);
@@ -147,6 +148,10 @@ namespace BackendBlog.Service
                 return response;
             }
             catch (KeyNotFoundException)
+            {
+                throw;
+            }
+            catch (UnauthorizedAccessException)
             {
                 throw;
             }
