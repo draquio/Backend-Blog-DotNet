@@ -37,7 +37,7 @@ namespace BackendBlog.Service
             try
             {
                 User user = await _userRepository.GetByEmail(login.Email);
-                if(user == null) throw new UnauthorizedAccessException("Invalid credentials");
+                if(user == null) throw new UnauthorizedAccessException("Email not found");
                 if (user.IsActive == false) throw new InvalidOperationException("Your account is not active. Please verify your email to activate your account.");
                 if(_passwordHasher.VerifyHashedPassword(user, user.Password, login.Password) != PasswordVerificationResult.Success)
                 {

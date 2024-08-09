@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackendBlog", "BackendBlog\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTesting_Service", "UnitTesting_Service\UnitTesting_Service.csproj", "{3E47C857-377A-41B1-9412-76983B6B875A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTesting_Repository", "UnitTesting_Repository\UnitTesting_Repository.csproj", "{531A4B62-352F-47B4-AFD5-64DDEF14B341}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTesting_Repository", "UnitTesting_Repository\UnitTesting_Repository.csproj", "{531A4B62-352F-47B4-AFD5-64DDEF14B341}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

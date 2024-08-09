@@ -22,7 +22,7 @@ namespace BackendBlog.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult<Response<string>>> Login([FromBody] LoginDto login)
+        public async Task<ActionResult<Response<TokenReadDto>>> Login([FromBody] LoginDto login)
         {
             var rsp = new Response<TokenReadDto>();
             if (login == null)
